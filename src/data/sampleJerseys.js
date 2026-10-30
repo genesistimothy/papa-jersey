@@ -1,0 +1,19 @@
+// Shown only while VITE_SANITY_PROJECT_ID is empty (local development and demos).
+
+const shirt = (body, trim, label) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#eef0f3"/><path d="M130 70l-80 40 30 90 40-15v245h160V185l40 15 30-90-80-40c-10 25-35 40-70 40s-60-15-70-40z" fill="${body}"/><path d="M130 70c10 25 35 40 70 40s60-15 70-40" fill="none" stroke="${trim}" stroke-width="12"/><text x="200" y="290" font-family="Arial" font-size="34" font-weight="700" text-anchor="middle" fill="${trim}">${label}</text></svg>`
+  return {url: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`}
+}
+
+const day = (n) => new Date(Date.UTC(2026, 9, n)).toISOString()
+
+export const sampleJerseys = [
+  {id: 's1', name: 'Persija Home 2025/26', slug: 'persija-home-2025-26-fan', team: 'Persija Jakarta', league: 'Liga 1', season: '2025/26', kitType: 'home', version: 'fan', price: 400000, namesetPrice: 50000, description: 'Jersey kandang Persija musim 2025/26, versi fan. Bahan dryfit yang ringan dan nyaman dipakai harian.', stock: {S: 3, M: 0, L: 5, XL: 2, XXL: 1}, images: [shirt('#d71f26', '#ffffff', 'PERSIJA'), shirt('#b0141b', '#ffffff', 'BACK')], createdAt: day(28)},
+  {id: 's2', name: 'Persija Home 2025/26', slug: 'persija-home-2025-26-player', team: 'Persija Jakarta', league: 'Liga 1', season: '2025/26', kitType: 'home', version: 'player', price: 650000, namesetPrice: 75000, description: 'Versi player dengan potongan slim fit dan bahan yang sama seperti dipakai pemain.', stock: {M: 2, L: 2}, images: [shirt('#d71f26', '#f6c343', 'PERSIJA')], createdAt: day(27)},
+  {id: 's3', name: 'Persib Away 2025/26', slug: 'persib-away-2025-26-fan', team: 'Persib Bandung', league: 'Liga 1', season: '2025/26', kitType: 'away', version: 'fan', price: 375000, namesetPrice: 50000, description: 'Jersey tandang Persib musim 2025/26.', stock: {S: 4, M: 6, L: 6, XL: 3}, images: [shirt('#ffffff', '#1d4fa3', 'PERSIB')], createdAt: day(25)},
+  {id: 's4', name: 'Arsenal Home 2025/26', slug: 'arsenal-home-2025-26-fan', team: 'Arsenal', league: 'Premier League', season: '2025/26', kitType: 'home', version: 'fan', price: 450000, namesetPrice: 60000, description: 'Jersey kandang Arsenal 2025/26.', stock: {M: 3, L: 4, XL: 4, XXL: 2, '3XL': 1}, images: [shirt('#db0007', '#ffffff', 'ARSENAL')], createdAt: day(22)},
+  {id: 's5', name: 'Liverpool Third 2025/26', slug: 'liverpool-third-2025-26-fan', team: 'Liverpool', league: 'Premier League', season: '2025/26', kitType: 'third', version: 'fan', price: 450000, namesetPrice: 60000, description: 'Jersey ketiga Liverpool 2025/26.', stock: {}, images: [shirt('#1e2a3a', '#e8c26b', 'LIVERPOOL')], createdAt: day(20)},
+  {id: 's6', name: 'Manchester United Retro 1999', slug: 'manchester-united-retro-1999', team: 'Manchester United', league: 'Premier League', season: '1998/99', kitType: 'retro', version: 'fan', price: 350000, namesetPrice: 60000, description: 'Jersey retro musim treble 1998/99.', stock: {M: 1, L: 2, XL: 1}, images: [shirt('#c8102e', '#111111', 'RETRO 99')], createdAt: day(18)},
+  {id: 's7', name: 'Persija Home Anak 2025/26', slug: 'persija-home-anak-2025-26', team: 'Persija Jakarta', league: 'Liga 1', season: '2025/26', kitType: 'kids', version: 'fan', price: 250000, namesetPrice: 40000, description: 'Jersey kandang Persija untuk anak.', stock: {XS: 5, S: 5, M: 3}, images: [shirt('#d71f26', '#ffffff', 'ANAK')], createdAt: day(15)},
+  {id: 's8', name: 'Real Madrid Home 2025/26', slug: 'real-madrid-home-2025-26-player', team: 'Real Madrid', league: 'La Liga', season: '2025/26', kitType: 'home', version: 'player', price: 700000, namesetPrice: 75000, description: 'Versi player jersey kandang Real Madrid.', stock: {S: 1, M: 2, L: 2}, images: [shirt('#ffffff', '#c9a227', 'MADRID')], createdAt: day(10)},
+]
